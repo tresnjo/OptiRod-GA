@@ -137,7 +137,7 @@ What follows is a construction of the matrix $A$ for the neutron diffusion equat
 
 Thereafter we have three optimization functions, firstly `invPow` that performs an inverse power iteration to find the dominant eigenvalue and its' corresponding eigenvector.`solve_phi0` and `solve_phi1` compute the zeroth-order and first-order neutron fluxes according to the defined differential equations in the background. Finally, the `objective` function defines the cost function for the genetic algorithm, and is evaluated purely from the coefficients in the Legendre polynomial expansion. 
 
-Finally we wneter the genetic algorithm that initializes a population of solutions $\mathbf{c_\nu}$'s, and selects the best individuals based on the evaluated fitness from the `objective` function. We thereafter perform crossovers and mutation in order to increase the gene pool and find new solutions. 
+Finally we enter the genetic algorithm that initializes a population of solutions $\mathbf{c_\nu}$'s, and selects the best individuals based on the evaluated fitness from the `objective` function. We thereafter perform crossovers and mutation in order to increase the gene pool and find new solutions. 
 
 The fitness is then visualized dynamically during the optimization process, and each of the consistuent terms in the cost function are visualized to see their individual contributions. 
 
