@@ -21,11 +21,11 @@ The objective of this project is to study whether we can optimize the control ro
 
 ### Diffusion Equation
 
-To achieve the objective, we will as previously stated, employ a simple diffusion equation for a multiplying medium, given by the equation
+To achieve the objective, we will as previously stated, employ a simple diffusion equation for a multiplying medium given by the equation
 
 $$-D\frac{d^2\phi}{dx^2}+\Sigma_a\phi(x)=\frac{\nu}{k}\Sigma_f\phi(x).$$
 
-where $\phi(x)$ represents the neutron flux, $D$ is the diffusion coefficient, $\Sigma_a$ is the absorption cross-section, $\nu$ is the neutrons created per fission, $k$ is the effective multiplication factor, and $\Sigma_f$ is the fission cross-section. The first term on the LHS represents the spreds of neutrons in the domain whose strength is determined by the diffusion coefficient. The second term represents losses due to absorption in the medium. The first term on the RHS represents gains due to fission proccesses. 
+Here $\phi(x)$ represents the neutron flux, $D$ is the diffusion coefficient, $\Sigma_a$ is the absorption cross-section, $\nu$ is the neutrons created per fission, $k$ is the effective multiplication factor, and $\Sigma_f$ is the fission cross-section. The first term on the LHS represents the spreds of neutrons (diffusivity), determined by the diffusion coefficient. The second term represents losses due to absorption in the medium. The first term on the RHS represents gains due to fission proccesses. 
 
 ### Modeling the Control Rod
 
