@@ -97,7 +97,9 @@ The solution procedure is described as follows:
 $$-\frac{D}{\Delta^2}\phi_{0, i-1}+\Big(\frac{2D}{\Delta^2}+\Sigma_a\Big)\phi_{0,i}-\frac{D}{\Delta^2}\phi_{0,i+1}=\frac{\nu}{k}\Sigma_f\phi_{0,i}$$
 
 which can be arranged into a matrix equation of the form
+
 $$ \mathbf{A} \mathbf{\phi_0} = \frac{\nu \Sigma_f}{k} \mathcal{1}_{n\times n} \mathbf{\phi_0} $$
+
 This is an eigenvalue problem that can be solved for the eigenvector $\phi_0$. 
 
 4. Use the zeroth order solution $\phi_0$ to solve for $\phi_1$ in the first order perturbation equation for some given $N_1(x)$. This is done through the following discretized equation
