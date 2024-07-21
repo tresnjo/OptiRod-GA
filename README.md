@@ -166,13 +166,13 @@ Furthermore, a simple Nelder-Mead minimization is also available in the code rep
 
 The results above indicate that indeed it's possible to get a better axial PPF for the given $N(x)$. However, it should be noted that the type of shape generated could be problematic during a manufacturing process, in comparision to a simple cylinder with constant radius. 
 
-What we clearly see is that the optimization tends to increase the flux locally in the control rod region, and since flux has to be constant, this gives rise to a smaller flux right after the control rod. In this way, one can achieve a more homogenous flux distribution in the reactor, at least theoretically. Still, the fluxes aren't perfectly balanced, and the settings of the weighting factors in the cost function might play a crucial role here.
+What is clear is that the optimization tends to increase the flux locally in the control rod region. Since the flux has to be constant between the unperturbed and perturbed solution, this gives rise to a smaller flux right after the control rod. In this way, one can achieve a more homogenous flux distribution in the reactor, at least theoretically. Still, the fluxes aren't perfectly balanced, and the settings of the weighting factors in the cost function might play a crucial role here.
 
 It should also be noted that we neglected effects such as energy dependencies of cross-sections, change in the multiplication factor $k$ with rod insertion. However, if the time-scale of the change in $k$ is significantly higher than the time-scale of the full control rod insertion, then transient effects can be neglected, and the results might be more applicable to a real-world scenario. 
 
-In the future, it might be benefical to validate the results using tools like OpenMC. It might even be possible to couple OpenMC with a genetic algorithm directly, but that will certainly be more computationally expensive than the method we have used here. I have added an OpenMC project at the moment that recreates a random perturbed cylindrical shape and returns the model. There're some bugs in the code, but for the interested, might be able to alter the code slightly and add a genetic algorithm, or another minimization technique, to get a working model. 
+In the future, it might be benefical to validate the results using tools like OpenMC. It might even be possible to couple OpenMC with a genetic algorithm directly, thought this would certainly be more computationally expensive than the method we have used here. I have added an OpenMC project at the moment that recreates a random perturbed cylindrical shape and returns the model. There're some bugs in the code, but those interested might be able to alter it slightly and add a genetic algorithm or another minimization technique to develop a working model.
 
-One could also incoroporate higher order perturbation solutions, since it's not very hard to extrapolate the results above to a generic perturbation order $j$. 
+One could also incoroporate higher order perturbation solutions, since it's not very hard to extend the results above to a generic perturbation order $j$. 
 
 
 
