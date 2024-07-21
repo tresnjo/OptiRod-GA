@@ -11,7 +11,6 @@ An attempt at developing an optimized control rod design for a nuclear reactor u
    2. [Inferring a Control Rod Design](#inferring-a-control-rod-design)
 5. [Code Description](#code-description)
 6. [Results](#results)
-7. [Conclusion](#conclusion)
 
    
 ## Objective
@@ -143,11 +142,38 @@ Finally we enter the genetic algorithm that initializes a population of solution
 
 The fitness is then visualized dynamically during the optimization process, and each of the consistuent terms in the cost function are visualized to see their individual contributions. 
 
+Furthermore, a simple Nelder-Mead minimization is also available in the code repositories. 
+
 ## Results
 
-Coming soon.
+### Fluxes
+![Fluxes](https://github.com/user-attachments/assets/3a541f19-fe94-49f6-8e82-ec562e3b9f25)
 
-## Conclusion
+*Figure 1: Fluxes at various insertion percentages*
+
+### N(x)
+![N(x)](https://github.com/user-attachments/assets/5707eb0d-7449-415a-b78b-53acd16f9e87)
+
+*Figure 2: An optimal N(x) design*
+
+### Axial PPF
+![Axial PPF](https://github.com/user-attachments/assets/5463a91a-9651-4c8d-abe2-bc84bedb334e)
+
+*Figure 3: Axial PPF at various insertion percentages*
+
+
+## Discussion
+
+The results above indicate that indeed it's possible to get a better axial PPF for the given $N(x)$. However, it should be noted that the type of shape generated could be problematic during a manufacturing process, in comparision to a simple cylinder with constant radius. 
+
+What we clearly see is that the optimization tends to increase the flux locally in the control rod region, and since flux has to be constant, this gives rise to a smaller flux right after the control rod. In this way, one can achieve a more homogenous flux distribution in the reactor, at least theoretically. Still, the fluxes aren't perfectly balanced, and the settings of the weighting factors in the cost function might play a crucial role here.
+
+It should also be noted that we neglected effects such as energy dependencies of cross-sections, change in the multiplication factor $k$ with rod insertion. However, if the time-scale of the change in $k$ is significantly higher than the time-scale of the full control rod insertion, then transient effects can be neglected, and the results might be more applicable to a real-world scenario. 
+
+In the future, it might be benefical to validate the results using tools like OpenMC. It might even be possible to couple OpenMC with a genetic algorithm directly, but that will certainly be more computationally expensive than the method we have used here. I have added an OpenMC project at the moment that recreates a random perturbed cylindrical shape and returns the model. There're some bugs in the code, but for the interested, might be able to alter the code slightly and add a genetic algorithm, or another minimization technique, to get a working model. 
+
+One could also incoroporate higher order perturbation solutions, since it's not very hard to extrapolate the results above to a generic perturbation order $j$. 
+
 
 
 
